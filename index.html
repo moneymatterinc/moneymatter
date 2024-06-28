@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-text {
+            position: relative;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .image-text img {
+            max-width: 100%;
+            display: block;
+        }
+        .image-text h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+        .services {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .services-list {
+            flex: 0 0 50%;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .service {
+            margin-bottom: 20px;
+        }
+        .service-title {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .service-description {
+            display: none;
+            margin-top: 10px;
+        }
+        .toggle-arrow::before {
+            content: "\25BC"; /* Unicode down arrow */
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .service.expanded .toggle-arrow::before {
+            content: "\25B2"; /* Unicode up arrow */
+        }
+        .split-section {
+            display: flex;
+            margin-top: 30px;
+        }
+        .split-section-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .split-section-image {
+            flex: 1;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer .footer-section {
+            flex: 1;
+            padding: 0 20px;
+        }
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span style="font-size: 24px; font-weight: bold; text-transform: uppercase;">Money</span>
+        </div>
+        <div>
+            <a href="#">Home</a> |
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+    <div>
+        <div class="image-text">
+            <img src="C:\Users\shiva\Downloads\Google_2015_logo.svg.webp" alt="Image">
+            <h2>LET US DO THE MATH</h2>
+        </div>
+
+        <section class="services">
+            <div class="services-list">
+                <h3>SERVICES</h3>
+                
+            </div>
+            <div class="split-section-image">
+<div class="service">
+                    <div class="service-title">Service 1 <span class="toggle-arrow"></span></div>
+                    <div class="service-description">Description for Service 1</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Service 2 <span class="toggle-arrow"></span></div>
+                    <div class="service-description">Description for Service 2</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Service 3 <span class="toggle-arrow"></span></div>
+                    <div class="service-description">Description for Service 3</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Service 4 <span class="toggle-arrow"></span></div>
+                    <div class="service-description">Description for Service 4</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Service 5 <span class="toggle-arrow"></span></div>
+                    <div class="service-description">Description for Service 5</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Service 6 <span class="toggle-arrow"></span></div>
+                    <div class="service-description">Description for Service 6</div>
+                </div>            </div>
+        </section>
+
+        <div class="split-section">
+            <div class="split-section-text">
+                <h2>Header for Left Section</h2>
+                <p>Text for the left section goes here.</p>
+            </div>
+            <div class="split-section-image">
+                <img src="C:\Users\shiva\Downloads\Google_2015_logo.svg.webp" alt="Image">
+            </div>
+        </div>
+		 <div class="split-section">
+            <div class="split-section-text">
+                <h2>Header for Left Section</h2>
+                <p>Text for the left section goes here.</p>
+            </div>
+            <div class="split-section-image" >
+                <img  padding= 50px" src="C:\Users\shiva\Downloads\Google_2015_logo.svg.webp" alt="Image">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+	
+	<div class="split-section">
+            <div class="split-section-text">
+                <h2>Location</h2>
+                <p>Text for the left section goes here.</p>
+            </div>
+			<div class="split-section-text">
+                <h2>Hours</h2>
+                <p>Text for the left section goes here.</p>
+            </div>
+			<div class="split-section-text">
+                <h2>Contacts</h2>
+                <p>Text for the left section goes here.</p>
+            </div>
+          
+        </div>
+		
+		
+       
+    </footer>
+
+    <script>
+        // JavaScript for toggling service descriptions
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceTitles = document.querySelectorAll('.service-title');
+            
+            serviceTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    const service = this.parentElement;
+                    service.classList.toggle('expanded');
+                    const description = service.querySelector('.service-description');
+                    if (description.style.display === 'block') {
+                        description.style.display = 'none';
+                    } else {
+                        description.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
